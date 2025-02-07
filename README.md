@@ -23,9 +23,7 @@
 
 ## インストールと実行
 
-次のいずれかの方法でインストールしてください。
-
-**1. pipx を使う場合 (推奨):**
+pipx を使ってインストールします。
 
 ```bash
 pipx install git+https://github.com/tos-kamiya/bushtyping
