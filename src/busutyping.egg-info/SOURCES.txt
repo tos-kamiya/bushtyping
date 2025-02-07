@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-src/bushtyping/__init__.py
-src/bushtyping/bushtyping.py
-src/busutyping.egg-info/PKG-INFO
-src/busutyping.egg-info/SOURCES.txt
-src/busutyping.egg-info/dependency_links.txt
-src/busutyping.egg-info/entry_points.txt
-src/busutyping.egg-info/top_level.txt
