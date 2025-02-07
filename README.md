@@ -59,3 +59,11 @@ python busutyping.py      # デフォルト: 小3レベル
 * Creative Commons Attribution-Share Alike 4.0 International (データ: `data/kanji2radical_*.json`, 提供元: https://github.com/yagays/kanjivg-radical/
 * CC BY 4.0 (データ: `data/小1/`, `data/高校/` など, 提供元: https://github.com/marmooo/graded-idioms-ja/
 
+## 謝辞
+
+本ゲームの開発にあたり、下記のデータを利用させていただきました。
+
+* 漢字-部首対応データ: [yagays/kanjivg-radical](https://github.com/yagays/kanjivg-radical/) (Creative Commons Attribution-Share Alike 4.0 International)
+* 単語データ: [marmooo/graded-idioms-ja](https://github.com/marmooo/graded-idioms-ja/) (CC BY 4.0)
+
+この場を借りて、データ提供者の皆様に深く感謝申し上げます。
