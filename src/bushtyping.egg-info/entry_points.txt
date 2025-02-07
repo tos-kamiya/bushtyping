@@ -1,0 +1,2 @@
+[console_scripts]
+bushtyping = bushtyping.bushtyping:main

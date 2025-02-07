@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bushtyping"
+version = "0.1.0"
+description = "A kanji radical typing game"
+authors = [{name = "Toshihiro Kamiya", email = "kamiya@mbj.nifty.com"}]
+dependencies = []
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[tool.setuptools.packages]
+find = {where = ["src"]}
+
+[tool.setuptools.package-data]
+bushtyping = ["data/**/*"]
+
+[project.scripts]
+bushtyping = "bushtyping.bushtyping:main"
