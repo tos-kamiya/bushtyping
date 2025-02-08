@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bushtyping"
-version = "0.2.0"
+version = "0.3.0"
 description = "A kanji radical typing game"
 authors = [{name = "Toshihiro Kamiya", email = "kamiya@mbj.nifty.com"}]
 dependencies = []
@@ -19,9 +19,6 @@ classifiers = [
 
 [tool.setuptools.packages]
 find = {where = ["src"]}
-
-[tool.setuptools.package-data]
-bushtyping = ["data/**/*"]
 
 [project.scripts]
 bushtyping = "bushtyping.bushtyping:main"

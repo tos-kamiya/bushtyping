@@ -1,29 +1,42 @@
 import argparse
-import importlib
-import importlib.resources
-import json
 import os
 import random
 import re
 import readline  # for proper handling [BS] key
 import time
 
+from .data_loader.kanji2radical_left_right import left_right_data
+from .data_loader.kanji2radical_top_bottom import top_bottom_data
+
+word_data = {}
+from .data_loader.words_1k import words
+word_data["1k"] = words
+from .data_loader.words_j import words
+word_data["j"] = words
+from .data_loader.words_j1k import words
+word_data["j1k"] = words
+from .data_loader.words_c2 import words
+word_data["c2"] = words
+from .data_loader.words_c3 import words
+word_data["c3"] = words
+from .data_loader.words_s1 import words
+word_data["s1"] = words
+from .data_loader.words_s2 import words
+word_data["s2"] = words
+from .data_loader.words_s3 import words
+word_data["s3"] = words
+from .data_loader.words_s4 import words
+word_data["s4"] = words
+from .data_loader.words_s5 import words
+word_data["s5"] = words
+from .data_loader.words_s6 import words
+word_data["s6"] = words
+
 
 RED = "\033[31m"
 GREEN = "\033[32m"
 YELLOW = "\033[33m"
 RESET = "\033[0m"
-
-
-with importlib.resources.open_text(
-    "bushtyping.data", "kanji2radical_left_right.json"
-) as f:
-    left_right_data = json.load(f)
-
-with importlib.resources.open_text(
-    "bushtyping.data", "kanji2radical_top_bottom.json"
-) as f:
-    top_bottom_data = json.load(f)
 
 
 def decompose_kanji(kanji):
@@ -78,7 +91,6 @@ def get_words_from_html(subdirectory):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="漢字部首分解クイズ")
     choices = {
         "s1": "小1",
         "s2": "小2",
@@ -91,19 +103,22 @@ def main():
         "k": "高校",
         "j1k": "準1級",
         "1k": "1級",
+        "j": "常用",
     }
+    parser = argparse.ArgumentParser(description="漢字部首分解クイズ")
     parser.add_argument(
         "grade",
-        choices=choices.keys(),
+        type=str,
         default="s3",
         nargs="?",
         help=f"出題範囲 (例: {', '.join(choices.keys())})",
     )
     args = parser.parse_args()
 
-    grade = choices[args.grade]
-    with importlib.resources.path("bushtyping.data", grade) as data_grade_dir:
-        words_list = get_words_from_html(data_grade_dir)
+    if args.grade not in choices:
+        print(f"error: 出題範囲は次のいずれかです: {', '.join(choices.keys())}")
+    words_list = word_data.get(args.grade, None)
+    assert words_list is not None
     num_questions = 10
     correct_count = 0
     start_time = time.time()
