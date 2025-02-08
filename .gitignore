@@ -1,0 +1,39 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.egg
+*.sdist
+
+# Data files (if you don't want to track them in Git)
+data/*
+!data/.git # Keep .git within data directory if it's a submodule
+
+# Installer related
+.env
+.venv
+env/
+venv/
+*.DS_Store  # macOS specific
+Thumbs.db   # Windows specific
+
+# Temp files and logs
+*.tmp
+*.log
+
+# IDE specific files (adjust as needed)
+.idea/
+.vscode/
+
+# Build artifacts
+build/
+dist/
+
+# Distribution related
+*.whl
+*.tar.gz
+*.egg-info
+
+# Memorandum
+
+memo/
