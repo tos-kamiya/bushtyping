@@ -5,30 +5,18 @@
 * 小1から漢検1級までのレベルを指定できます。
 * ただし、頻出の漢字の並びを熟語としているので、必ずしも辞書に載っている熟語とは限りません。
 
+### スクリーンショット
+
 <img src="screenshot1.png" width="500px">
 
-## 構成
-
-```
-/
-├── bushtyping.py   # ゲームスクリプト
-└── data/           # データディレクトリ
-    ├── kanji2radical_left_right.json # 漢字-部首対応データ (左右)
-    ├── kanji2radical_top_bottom.json # 漢字-部首対応データ (上下)
-    ├── 小1/         # 小学校1年生レベルの単語データ
-    ├── 小2/         # 小学校2年生レベルの単語データ
-    ├── ...
-    ├── 高校/        # 高校レベルの単語データ
-    ├── 準1級/      # 準1級レベルの単語データ  (修正)
-    └── 1級/        # 1級レベルの単語データ    (修正)
-```
+<img src="screenshot2.png" width="500px">
 
 ## インストールと実行
 
 pipx を使ってインストールします。
 
 ```bash
-pipx install git+[https://github.com/tos-kamiya/bushtyping](https://github.com/tos-kamiya/bushtyping)
+pipx install git+https://github.com/tos-kamiya/bushtyping
 ```
 
 インストール後、以下のコマンドでゲームを実行できます。
@@ -58,6 +46,7 @@ bushtyping     # デフォルト: 小3レベル
 * `k`: 高校
 * `j1k`: 準1級
 * `1k`: 1級
+* `j`: 常用
 
 ## ライセンス
 
