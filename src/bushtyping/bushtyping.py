@@ -2,8 +2,11 @@ import argparse
 import os
 import random
 import re
-import readline  # for proper handling [BS] key
+import sys
 import time
+
+if sys.platform != "win32":
+    import readline  # for proper handling [BS] key
 
 from .data_loader.kanji2radical_left_right import left_right_data
 from .data_loader.kanji2radical_top_bottom import top_bottom_data
