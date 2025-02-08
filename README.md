@@ -73,3 +73,5 @@ bushtyping     # デフォルト: 小3レベル
 * 単語データ: [marmooo/graded-idioms-ja](https://github.com/marmooo/graded-idioms-ja/) (CC BY 4.0)
 
 この場を借りて、データ提供者の皆様に深く感謝申し上げます。
+
+コード生成や修正はほとんどGemini Advanced 2.0 Flashさんにやっていただきました。感謝いたします。
