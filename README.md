@@ -1,3 +1,5 @@
+[→ English README](README-en.md)
+
 # 部首タイピングゲーム (Bushu Typing Game)
 
 漢字の知識を試そう！部首パズルで脳トレ！
