@@ -58,41 +58,6 @@ def decompose_word(word):
     return parts
 
 
-def get_words_from_html(subdirectory):
-    """
-    指定されたサブディレクトリにあるHTMLファイルから熟語を読み取り、リストとして返します。
-    正規表現を使って<a>タグから熟語を抽出します。
-
-    Args:
-        subdirectory (str): サブディレクトリの名前（例: "小1", "小2"）。
-
-    Returns:
-        list: 熟語のリスト。
-    """
-
-    words = []
-    for filename in os.listdir(subdirectory):
-        if filename.endswith(".html"):
-            filepath = os.path.join(subdirectory, filename)
-            try:
-                with open(filepath, "r", encoding="utf-8") as f:
-                    html = f.read()
-                    # 正規表現で<a>タグから熟語を抽出
-                    pattern = r'<a href="https://www.google.com/search\?q=.*?>(.*?)</a>'
-                    matches = re.findall(pattern, html)
-                    for word in matches:
-                        words.append(word)
-            except Exception as e:
-                print(f"エラー: {filepath} を読み込めませんでした。 {e}")
-    return words
-
-
-# def main():
-#     words_list = get_words_from_html("小1")
-#     word = words_list[0]
-#     print(decompose_word(word))
-
-
 def main():
     choices = {
         "s1": "小1",
@@ -120,6 +85,7 @@ def main():
 
     if args.grade not in choices:
         print(f"error: 出題範囲は次のいずれかです: {', '.join(choices.keys())}")
+        exit(1)
     words_list = word_data.get(args.grade, None)
     assert words_list is not None
     num_questions = 10
